@@ -3,6 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
+        text-decoration: none;
 }
 
 body{
@@ -190,10 +191,9 @@ body{
 	cursor: pointer;
 }
 .card .content .details .actionBtn button a{
-        text-decoration: none;
         font-size: 1rem;
-        font-weight: 500;
-        background: #ecf0f3;
+	font-weight: 500;
+	background: #ecf0f3;
 	color: #31344b;
 }
 .card .content .details .actionBtn button:hover{
