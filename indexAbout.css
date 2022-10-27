@@ -1,0 +1,217 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body{
+	min-height: 100vh;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ecf0f3;
+}
+
+.card{
+	position: relative;
+	width: 350px;
+	height: 170px;
+	background: #ecf0f3;
+	transition: 0.5s;
+	box-shadow: -2px -2px 5px #ffffff,
+				3px 3px 5px #ceced1;
+}
+
+.card:hover{
+	height: 450px;
+}
+
+.card .lines{
+	position: absolute;
+	inset: 0;
+	background: #ecf0f3;
+	overflow: hidden;
+}
+.card .lines::before{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 600px;
+	height: 120px;
+	background: linear-gradient(transparent, #31344b, #31344b, #31344b, transparent);
+	animation: animate 4s linear infinite;
+}
+
+@keyframes animate{
+	0%{
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+	100%{
+		transform: translate(-50%,-50%) rotate(360deg);
+	}
+}
+
+.card .lines::after{
+	content: '';
+	position: absolute;
+	inset: 3px;
+	background: #ecf0f3;
+}
+.card .imgholder{
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 120px;
+	height: 120px;
+	background: #ecf0f3;
+	transition: 0.5s;
+	z-index: 8;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.card:hover .imgholder{
+	width: 150px;
+	height: 150px;
+}
+.card .imgholder::before{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 500px;
+	height: 250px;
+	background: linear-gradient(transparent, #ffffff, #ffffff, #31344b, #31344b, #ffffff, #ffffff, transparent);
+	animation: animate2 5s linear infinite; 
+}
+
+.card:hover .imgholder::before{
+	height: 180px;
+}
+
+@keyframes animate2{
+	0%{
+		transform: translate(-50%,-50%) rotate(360deg);
+	}
+	100%{
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+}
+
+
+.card .imgholder::after{
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+	inset: 5px;
+	background: #ecf0f3;
+}
+
+.card .imgholder img{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	background-size: cover;
+	object-fit: cover;
+	z-index: 1;
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+	filter: grayscale(0.3);
+
+}
+.card .content{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	overflow: hidden;
+}
+
+.card .content .details{
+	padding: 40px;
+	text-align: center;
+	width: 100%;
+	transition: 0.5s ease-in-out;
+	transform: translateY(270px);
+}
+.card:hover .content .details{
+	transform: translateY(15px);
+}
+.card .content .details h2{
+	font-size: 1.85rem;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif;
+	color: #31344b;
+	line-height: 1em;
+	letter-spacing: 1px;
+}
+.card .content .details h2 span{
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: #292929;
+}
+
+.card .content .details .des{
+	width: 100%;
+	margin-top: 1rem;
+}
+
+.card .content .details .des p{
+	font-size: 0.95rem;
+	color: #44476a;
+	letter-spacing: 0.7px;
+	line-height: 1.3em;
+}
+.card .content .details .actionBtn{
+	display: flex;
+	justify-content: center;
+	margin: 1.35rem 0;
+}
+.card .content .details .actionBtn button{
+	position: relative;
+	padding: 0.85rem 1.95rem;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	font-weight: 500;
+	background: #ecf0f3;
+	color: #31344b;
+	box-shadow: -3px -3px 7px #ffffff,
+				3px 3px 5px #ceced1;
+	transition: box-shadow 0.5s ease-in-out;
+	cursor: pointer;
+}
+.card .content .details .actionBtn button:hover{
+	box-shadow: -3px -3px 7px #ceced1,
+				3px 3px 5px #ffffff;
+}
+.card .content .details .social_links{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem 1rem;
+}
+
+.card .content .details .social_links img{
+	width: 40px;
+	background: #ecf0f3;
+	padding: 3px;
+	box-shadow: -3px -3px 7px #ffffff,
+				3px 3px 5px #ceced1;
+	border-radius: 50%;
+	transition: box-shadow 0.5s ease-in-out;
+}
+
+.card .content .details .social_links img:hover{
+	box-shadow: -3px -3px 7px #ceced1,
+				3px 3px 5px #ffffff;
+}
